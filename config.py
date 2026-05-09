@@ -1,0 +1,23 @@
+# Pantalla
+WIDTH = 900
+HEIGHT = 500
+TITULO = "Adivina la palabra"
+
+# Colores
+COLOR_FONDO = (18, 18, 24)
+COLOR_TEXTO = (240, 240, 240)
+COLOR_INPUT = (100, 200, 255)
+COLOR_ERROR = (255, 100, 100)
+COLOR_EXITO = (120, 255, 120)
+
+# Fuentes
+FUENTE = "Arial"
+TAMANO_TEXTO = 40
+TAMANO_TITULO = 60
+
+# Juego
+TIEMPO_LIMITE = 20
+INTENTOS_MAX = 5
+
+# Otros
+TIEMPO_FINAL_MS = 3000
