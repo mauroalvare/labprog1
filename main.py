@@ -8,6 +8,17 @@ def generar_pista(palabra):
     Ejemplo:
     "python" -> "p _ t _ o _"
     """
+    myLista = ["_"] * len(obtener_palabra)
+    impares = [1,3,5,7,9,11,13,15]
+
+    for i in range (len(obtener_palabra)):
+        if i in impares:
+            myLista[i] = obtener_palabra[i]
+        
+    pista = " ".join(myLista)
+
+    return(pista)
+    
     pass
 
 
