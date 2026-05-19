@@ -37,25 +37,21 @@ def calcular_puntaje(tiempo_restante, intentos_restantes):
     return tiempo_restante * 10 + intentos_restantes * 20
 
 # Ejercicio Adicional
-def actualizar_pista(pista: str, palabra):
-   def actualizar_pista(pista, palabra):
+def actualizar_pista(pista: str, palabra: str) -> str:
 
     nueva_pista = ""
-
-    indice_letra = 0
     reemplazado = False
 
     for i in range(len(pista)):
 
-        if pista[i] == "_" and reemplazado == False:
-            nueva_pista += palabra[indice_letra]
+        if pista[i] == "_" and not reemplazado:
+
+            posicion = i // 2
+            nueva_pista += palabra[posicion]
             reemplazado = True
 
         else:
             nueva_pista += pista[i]
-
-        if pista[i] != " ":
-            indice_letra += 1
 
     return nueva_pista
 
