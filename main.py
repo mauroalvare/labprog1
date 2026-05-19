@@ -4,14 +4,7 @@ from palabras import obtener_palabra
 
 # EJERCICIO 1
 def generar_pista(palabra):
-    """
-    Dada una palabra, devolver un string con letras y guiones.
-    Ejemplo:
-    "python" -> "p _ t _ o _"
 
-    Criterio: Se muestran las letras en posiciones pares (0, 2, 4, ...)
-    y se ocultan las de posiciones impares (1, 3, 5, ...)
-    """
     pista = ""
     for i in range(len(palabra)):
         if i % 2 == 0:
@@ -28,37 +21,25 @@ def generar_pista(palabra):
 
 # EJERCICIO 2
 def verificar_palabra(palabra, intento):
-    """
-    Debe devolver True si el intento es correcto, False si no.
-    Se utiliza lower() para evitar errores por mayúsculas/minúsculas.
-    """
+
     return palabra.lower() == intento.lower()
 
 
 def calcular_puntaje(tiempo_restante, intentos_restantes):
-    """
-    Calcula el puntaje según la fórmula:
-    puntaje = tiempo_restante * 10 + intentos_restantes * 20
 
-    Esto recompensa terminar rápido y con menos errores.
-    """
     puntaje = int(tiempo_restante * 10) + intentos_restantes * 20
     return puntaje
 
 
 # Ejercicio Adicional
 def actualizar_pista(pista: str, palabra):
-    """
-    Revela una letra oculta en la pista cada vez que el jugador falla.
+    # Contar guiones restantes
+    cantidad_guiones = pista.count("_")
 
-    Algoritmo:
-    1. Buscar todas las posiciones donde hay un guión bajo (_)
-    2. Elegir la primera posición con guión bajo
-    3. Reemplazarla por la letra correspondiente en la palabra original
-    4. Devolver la pista actualizada
+    # Si solo hay 1 o 0 guiones, no revelar más
+    if cantidad_guiones <= 1:
+        return pista
 
-    Si no quedan letras por adivinar, devuelve la misma pista.
-    """
     # Convertir la pista a lista para poder modificarla
     pista_lista = list(pista)
 
